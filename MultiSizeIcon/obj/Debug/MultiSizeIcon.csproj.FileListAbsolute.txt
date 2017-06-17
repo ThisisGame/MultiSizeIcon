@@ -1,0 +1,9 @@
+G:\Github\MultiSizeIcon\MultiSizeIcon\bin\Debug\MultiSizeIcon.exe.config
+G:\Github\MultiSizeIcon\MultiSizeIcon\bin\Debug\MultiSizeIcon.exe
+G:\Github\MultiSizeIcon\MultiSizeIcon\bin\Debug\MultiSizeIcon.pdb
+G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Debug\MultiSizeIcon.csprojResolveAssemblyReference.cache
+G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Debug\MultiSizeIcon.Form1.resources
+G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Debug\MultiSizeIcon.Properties.Resources.resources
+G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Debug\MultiSizeIcon.csproj.GenerateResource.Cache
+G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Debug\MultiSizeIcon.exe
+G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Debug\MultiSizeIcon.pdb

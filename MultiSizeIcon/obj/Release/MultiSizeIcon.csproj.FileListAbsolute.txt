@@ -1,0 +1,8 @@
+G:\Github\MultiSizeIcon\MultiSizeIcon\bin\Release\MultiSizeIcon.exe.config
+G:\Github\MultiSizeIcon\MultiSizeIcon\bin\Release\MultiSizeIcon.exe
+G:\Github\MultiSizeIcon\MultiSizeIcon\bin\Release\MultiSizeIcon.pdb
+G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Release\MultiSizeIcon.Form1.resources
+G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Release\MultiSizeIcon.Properties.Resources.resources
+G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Release\MultiSizeIcon.csproj.GenerateResource.Cache
+G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Release\MultiSizeIcon.exe
+G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Release\MultiSizeIcon.pdb
