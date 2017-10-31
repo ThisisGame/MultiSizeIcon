@@ -106,8 +106,8 @@ namespace MultiSizeIcon
 
 
 
-            string[] tmpIOSIconName = { "Icon.png", "Icon@2x.png", "Icon-72.png", "Icon-76.png", "Icon-120.png", "Icon-144.png", "Icon-152.png", "Icon-167.png", "Icon-180.png" };
-            int[] tmpIosIconSize = { 57, 114, 72, 76, 120, 144, 152,167,180 };
+            string[] tmpIOSIconName = { "Icon.png", "Icon@2x.png", "Icon-72.png", "Icon-76.png", "Icon-120.png", "Icon-144.png", "Icon-152.png", "Icon-167.png", "Icon-180.png", "Icon-1024.png" };
+            int[] tmpIosIconSize = { 57, 114, 72, 76, 120, 144, 152,167,180 ,1024};
 
             for (int i = 0; i < tmpIOSIconName.Length; i++)
             {
@@ -119,7 +119,7 @@ namespace MultiSizeIcon
                 {
                     Directory.CreateDirectory(tmpIconPath);
                 }
-                newBit.Save(tmpIconPath + tmpIOSIconName[i]);
+                newBit.Save(tmpIconPath + tmpIOSIconName[i],ImageFormat.Jpeg);
                 newBit.Dispose();
             }
 

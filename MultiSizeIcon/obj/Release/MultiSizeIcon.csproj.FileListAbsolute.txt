@@ -6,3 +6,4 @@ G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Release\MultiSizeIcon.Properties.Resou
 G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Release\MultiSizeIcon.csproj.GenerateResource.Cache
 G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Release\MultiSizeIcon.exe
 G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Release\MultiSizeIcon.pdb
+G:\Github\MultiSizeIcon\MultiSizeIcon\obj\Release\MultiSizeIcon.csprojResolveAssemblyReference.cache
