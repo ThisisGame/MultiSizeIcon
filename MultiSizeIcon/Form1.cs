@@ -119,7 +119,17 @@ namespace MultiSizeIcon
                 {
                     Directory.CreateDirectory(tmpIconPath);
                 }
-                newBit.Save(tmpIconPath + tmpIOSIconName[i],ImageFormat.Jpeg);
+                
+                if(tmpIosIconSize[i]==1024)
+                {
+                    newBit.Save(tmpIconPath + tmpIOSIconName[i], ImageFormat.Jpeg);
+                }
+                else
+                {
+                    newBit.Save(tmpIconPath + tmpIOSIconName[i]);
+                }
+
+                
                 newBit.Dispose();
             }
 
