@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+
 using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -19,7 +19,7 @@ namespace MultiSizeIcon
         {
             InitializeComponent();
 
-            System.Diagnostics.Process.Start("http://blog.csdn.net/huutu/article/details/73380214");
+            //System.Diagnostics.Process.Start("http://blog.csdn.net/huutu/article/details/73380214");
         }
 
         
@@ -32,13 +32,12 @@ namespace MultiSizeIcon
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FileStream stream = File.OpenRead("./app_icon.png");
-            int fileLength = 0;
-            fileLength = (int)stream.Length;
-            Byte[] image = new Byte[fileLength];
-            stream.Read(image, 0, fileLength);
-            System.Drawing.Image result = System.Drawing.Image.FromStream(stream);
-            stream.Close();
+            if (pictureBox1.Image == null)
+            {
+                return;
+            }
+            System.Drawing.Image result = pictureBox1.Image;
+
 
 
 
@@ -64,13 +63,11 @@ namespace MultiSizeIcon
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FileStream stream = File.OpenRead("./app_icon.png");
-            int fileLength = 0;
-            fileLength = (int)stream.Length;
-            Byte[] image = new Byte[fileLength];
-            stream.Read(image, 0, fileLength);
-            System.Drawing.Image result = System.Drawing.Image.FromStream(stream);
-            stream.Close();
+            if (pictureBox1.Image == null)
+            {
+                return;
+            }
+            System.Drawing.Image result = pictureBox1.Image;
 
 
 
@@ -96,13 +93,14 @@ namespace MultiSizeIcon
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FileStream stream = File.OpenRead("./app_icon.png");
-            int fileLength = 0;
-            fileLength = (int)stream.Length;
-            Byte[] image = new Byte[fileLength];
-            stream.Read(image, 0, fileLength);
-            System.Drawing.Image result = System.Drawing.Image.FromStream(stream);
-            stream.Close();
+            if (pictureBox1.Image == null)
+            {
+                return;
+            }
+
+            
+
+            System.Drawing.Image result = pictureBox1.Image;
 
 
 
@@ -134,6 +132,97 @@ namespace MultiSizeIcon
             }
 
             MessageBox.Show("Finish");
+        }
+
+
+        string mImageIconPath = string.Empty;
+        string mImageChannelTagPath = string.Empty;
+        private void CombineImage()
+        {
+            if (string.IsNullOrEmpty(mImageIconPath) == false)
+            {
+                Bitmap tmpBitmapIcon = new Bitmap(mImageIconPath);
+
+
+                pictureBox1.Image = tmpBitmapIcon;
+
+                labelpreview.Visible = false;
+
+                if (string.IsNullOrEmpty(mImageChannelTagPath)==false)
+                {
+                    Graphics tmpGraphics = Graphics.FromImage(tmpBitmapIcon);
+
+                    Bitmap tmpBitmapChannelTag = new Bitmap(mImageChannelTagPath);
+
+                    if (tmpBitmapIcon.Width != tmpBitmapChannelTag.Width || tmpBitmapIcon.Height != tmpBitmapChannelTag.Height)
+                    {
+                        MessageBox.Show("Icon和角标尺寸不同");
+                        return;
+                    }
+
+                    tmpGraphics.DrawImage(tmpBitmapChannelTag, 0, 0, tmpBitmapChannelTag.Width, tmpBitmapChannelTag.Height);
+                    tmpGraphics.Dispose();
+
+                    pictureBox1.Image.Save("./Combine.png");
+                }
+
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            //打开的对话框可以选择多个文件
+            ofd.Multiselect = false;
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string tmpFilePath = ofd.FileNames[0];
+
+                FileStream stream = File.OpenRead(tmpFilePath);
+                int fileLength = 0;
+                fileLength = (int)stream.Length;
+                Byte[] image = new Byte[fileLength];
+                stream.Read(image, 0, fileLength);
+                System.Drawing.Image result = System.Drawing.Image.FromStream(stream);
+                stream.Close();
+
+                pictureBox2.Image = result;
+
+                labelIcon.Visible = false;
+
+                mImageIconPath = tmpFilePath;
+                CombineImage();
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            //打开的对话框可以选择多个文件
+            ofd.Multiselect = false;
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string tmpFilePath = ofd.FileNames[0];
+
+                FileStream stream = File.OpenRead(tmpFilePath);
+                int fileLength = 0;
+                fileLength = (int)stream.Length;
+                Byte[] image = new Byte[fileLength];
+                stream.Read(image, 0, fileLength);
+                System.Drawing.Image result = System.Drawing.Image.FromStream(stream);
+                stream.Close();
+
+                pictureBox3.Image = result;
+
+                labelChannelTag.Visible = false;
+
+                mImageChannelTagPath = tmpFilePath;
+                CombineImage();
+            }
         }
     }
 }
